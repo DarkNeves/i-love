@@ -35,7 +35,8 @@ body {
     height: 100vh;
 }
 .container {
-    max-width: 400px;
+    max-width: 430px;
+    width: 96vw;
     margin: 40px auto;
     background: rgba(255,255,255,0.85);
     border-radius: 24px;
@@ -129,13 +130,13 @@ body {
 }
 .a15-icon {
     top: -35px;
-    left: 155px;
+    left: 175px;
     transform: rotate(0deg);
     width: 150px;
 }
 .a13-icon {
-    top: -25px;
-    left: 400px;
+    top: -30px;
+    left: 420px;
     transform: rotate(12deg);
 }
 
@@ -204,8 +205,9 @@ body {
 }
 @media (max-width: 600px) {
     .container {
-        max-width: 98vw;
-        padding: 1rem 0.5rem;
+        max-width: 99vw;
+        width: 99vw;
+        padding: 1rem 0.3rem;
     }
     .love-btn {
         font-size: 1rem;
@@ -215,4 +217,16 @@ body {
         font-size: 1rem !important;
         padding: 0.4em 0.7em;
     }
+}
+
+@media (max-width: 600px) {
+    .a15-icon, .a14-icon, .a13-icon {
+        width: 60px !important;
+        left: 10px !important;
+        right: 10px !important;
+        top: -20px !important;
+    }
+    .a15-icon { left: 50% !important; transform: translateX(-50%) !important; }
+    .a14-icon { left: 0 !important; }
+    .a13-icon { right: 0 !important; }
 }
