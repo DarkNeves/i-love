@@ -207,7 +207,7 @@ body {
 @media (max-width: 600px) {
     .container {
         max-width: 80vw;
-        height: 220px
+        max-height: 700px
         padding: 1rem 0.3rem;
     }
     .love-btn {
@@ -237,7 +237,7 @@ body {
         transform: rotate(12deg) !important;
     }
     .carousel {
-        height: 110px !important;
+        height: 220px !important;
     }
     .title {
         font-size: 1.3rem !important;
