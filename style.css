@@ -207,7 +207,6 @@ body {
 @media (max-width: 600px) {
     .container {
         max-width: 80vw;
-        max-height: 700px
         padding: 1rem 0.3rem;
     }
     .love-btn {
