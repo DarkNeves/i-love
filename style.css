@@ -202,23 +202,8 @@ body {
 @keyframes flutua {
     0% { transform: translateY(0) scale(1);}
     100% { transform: translateY(-30px) scale(1.05);}
-}
-@media (max-width: 600px) {
-    .container {
-        max-width: 99vw;
-        width: 99vw;
-        padding: 1rem 0.3rem;
-    }
-    .love-btn {
-        font-size: 1rem;
-        padding: 0.8em 1.5em;
-    }
-    .frase-amor {
-        font-size: 1rem !important;
-        padding: 0.4em 0.7em;
-    }
-}
 
+}
 @media (max-width: 600px) {
     .container {
         max-width: 99vw;
@@ -247,7 +232,7 @@ body {
         transform: rotate(-12deg) !important;
     }
     .a13-icon {
-        right: 0 !important;
+        right: 320px !important;
         left: auto !important;
         transform: rotate(12deg) !important;
     }
