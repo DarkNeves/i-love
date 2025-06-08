@@ -248,7 +248,8 @@ body {
     /* A regra de 'aspect-ratio' já torna o carrossel responsivo, */
     /* então não precisamos mais das regras de height e width aqui. */
     .carousel {
-     height: 100%
+        height: auto;
+        aspect-ratio: 4 / 3;
     }
     .title {
         font-size: 1.3rem !important;
