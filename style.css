@@ -237,11 +237,7 @@ body {
         transform: rotate(12deg) !important;
     }
     .carousel {
-        height: 600px !important;
-    }
-
-    .carousel-img {
-        heiht: 500px;
+        height: 220px !important;
     }
     .title {
         font-size: 1.3rem !important;
