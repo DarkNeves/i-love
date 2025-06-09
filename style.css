@@ -239,6 +239,10 @@ body {
     .carousel {
         height: 220px !important;
     }
+
+    .carousel-img {
+        heiht: 300px;
+    }
     .title {
         font-size: 1.3rem !important;
         margin-top: 60px !important;
