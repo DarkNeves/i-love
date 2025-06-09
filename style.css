@@ -1,4 +1,3 @@
-/* Estilos gerais do corpo da página */
 body {
     margin: 0;
     padding: 0;
@@ -6,13 +5,9 @@ body {
     background: linear-gradient(135deg, #ffe5ec 0%, #ffc2d1 100%);
     min-height: 100vh;
 }
-
-/* Fundo da página inicial */
 .home-bg {
     background: linear-gradient(135deg, #ffc2d1 0%, #fff0f5 100%);
 }
-
-/* Estilo do botão principal */
 .love-btn {
     background: #fff0f5;
     color: #d72660;
@@ -33,18 +28,14 @@ body {
     color: #a61e4d;
     transform: scale(1.04);
 }
-
-/* Centraliza conteúdo na tela */
 .center-box {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
-
-/* Container principal */
 .container {
-    max-width: 700px;
+    max-width: 430px;
     width: 96vw;
     margin: 40px auto;
     background: rgba(255,255,255,0.85);
@@ -54,8 +45,6 @@ body {
     text-align: center;
     position: relative;
 }
-
-/* Título principal */
 .title {
     color: #d72660;
     font-family: 'Pacifico', cursive, Arial;
@@ -64,13 +53,12 @@ body {
     letter-spacing: 1px;
     margin-top: 95px;
 }
-
-/* Player do Spotify */
 .spotify-player {
     margin-bottom: 1.5rem;
     border-radius: 12px;
     width: 100%;
-    min-height: 100px;
+    min-height: 100px; /* aumenta a altura mínima */
+    padding: 0;        /* pode tirar o padding vertical */
     overflow: hidden;
     box-shadow: 0 1px 12px #ffc2d170;
     display: flex;
@@ -78,34 +66,24 @@ body {
     align-items: center;
     background: rgba(255,255,255,0.85);
 }
-
-/* --- CORREÇÃO DO CARROSSEL --- */
 .carousel {
     position: relative;
-    width: 100%; /* Faz o carrossel ocupar a largura do container */
-    
-    /* AQUI ESTÁ A MÁGICA: Define a proporção (largura / altura). */
-    /* Usei 16 / 10 como exemplo. Você pode mudar para 16 / 9, 4 / 3 ou 1 / 1 (quadrado). */
-    aspect-ratio: 16 / 10; 
-    
+    height: 490px; /* altura do retângulo */
     margin-bottom: 1.3rem;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 2px 16px #ffc2d150;
 }
-
 .carousel-img {
     position: absolute;
     width: 100%;
-    height: 100%; /* Cobre toda a altura do carrossel, que agora é responsiva */
-    object-fit: cover; /* Cobre todo o espaço, sem distorcer */
+    height: 100%;      /* cobre toda a altura do carrossel */
+    object-fit: cover; /* cobre todo o espaço, sem distorcer */
     left: 0;
     top: 0;
     transition: opacity 0.6s;
     border-radius: 16px;
 }
-/* --- FIM DA CORREÇÃO --- */
-
 .mensagem {
     font-size: 1.1rem;
     color:#000;
@@ -138,10 +116,12 @@ body {
     z-index: 20;
     width: 90px;
     filter: drop-shadow(0 8px 16px #d7266080);
+    /* Efeito 3D de sombra */
     transition: transform 0.3s;
 }
 .sombra-icon:hover {
     transform: scale(1.08) rotate(-4deg);
+    /* Pequeno efeito ao passar o mouse */
 }
 .a14-icon {
     top: -30px;
@@ -190,7 +170,19 @@ body {
     transition: opacity 0.5s;
     will-change: transform, opacity;
 }
-
+@keyframes fall {
+    0% {
+        transform: translateY(-40px) scale(1) rotate(0deg);
+        opacity: 0.8;
+    }
+    80% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(100vh) scale(0.8) rotate(30deg);
+        opacity: 0;
+    }
+}
 .frase-amor {
     position: fixed;
     z-index: 10;
@@ -210,14 +202,13 @@ body {
 @keyframes flutua {
     0% { transform: translateY(0) scale(1);}
     100% { transform: translateY(-30px) scale(1.05);}
-}
 
-/* Media Query para telas menores */
+}
 @media (max-width: 600px) {
     .container {
-        /* Aumentei um pouco a largura para aproveitar melhor a tela do celular */
-        width: 95vw;
-        padding: 1rem 0.5rem;
+        max-width: 99vw;
+        width: 99vw;
+        padding: 1rem 0.3rem;
     }
     .love-btn {
         font-size: 1rem;
@@ -241,15 +232,12 @@ body {
         transform: rotate(-12deg) !important;
     }
     .a13-icon {
-        right: 0px !important;
+        right: 320px !important;
         left: auto !important;
         transform: rotate(12deg) !important;
     }
-    /* A regra de 'aspect-ratio' já torna o carrossel responsivo, */
-    /* então não precisamos mais das regras de height e width aqui. */
     .carousel {
-        height: 700px;
-        width: 100%
+        height: 220px !important;
     }
     .title {
         font-size: 1.3rem !important;
