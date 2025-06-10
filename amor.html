@@ -19,9 +19,23 @@
         <!-- Spotify -->
         <div class="spotify-player">
 
-           <div class="spotify-player">
-           <video id="video-romantico" src="video/b1.mp4" class="video-romantico" autoplay muted playsinline></video>
-           </div>
+           <div class="spotify-player" style="position:relative;">
+    <video id="video-romantico" src="video/b1.mp4" class="video-romantico" playsinline></video>
+    <button id="btn-play-video" style="
+        position:absolute;
+        top:50%; left:50%;
+        transform:translate(-50%,-50%);
+        z-index:10;
+        background:#d72660;
+        color:#fff;
+        border:none;
+        border-radius:50px;
+        padding:0.7em 2em;
+        font-size:1.2em;
+        cursor:pointer;
+        box-shadow:0 2px 12px #ffc2d170;
+    ">▶️ Play</button>
+</div>
 
         </div>
         <!-- Carrossel de fotos -->
@@ -107,32 +121,31 @@
 setInterval(createHeart, 350);
 </script>
 
+
 <script>
 const video = document.getElementById('video-romantico');
-let repeatCount = 0;
-const maxRepeats = 4;
+const btnPlay = document.getElementById('btn-play-video');
+
+btnPlay.addEventListener('click', function() {
+    video.muted = false;
+    video.volume = 1;
+    video.play();
+    btnPlay.style.display = 'none';
+});
+
+// Mostra o botão se o vídeo for pausado ou terminar
+video.addEventListener('pause', function() {
+    if (video.currentTime < video.duration) {
+        btnPlay.style.display = 'block';
+    }
+});
 
 video.addEventListener('ended', function() {
-    repeatCount++;
-    if (repeatCount < maxRepeats) {
-        video.currentTime = 0;
-        video.play();
-    } else {
-        // Mostra um aviso ou botão para o usuário clicar e repetir
-        video.style.opacity = "1";
-        video.title = "Clique para assistir novamente";
-    }
-});
-
-// Permite repetir ao clicar no vídeo
-video.addEventListener('click', function() {
-    if (repeatCount >= maxRepeats) {
-        repeatCount = 0;
-        video.style.opacity = "1";
-        video.play();
-    }
+    btnPlay.style.display = 'block';
 });
 </script>
+
+
 
 </body>
 </html>
